@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/*MOBILE: 375PX     / DESKTOP: 1440PX
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --Primary-Moderate-violet: hsl(263, 55%, 52%);
+    --Primary-Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Primary-Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --Primary-White: hsl(0, 0%, 100%);
+    --Neutral-Light-gray: hsl(0, 0%, 81%);
+    --Neutral-Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed';
+    background-color: #edf2f8;
+}
+/*MAIN SETTINGS*/
+h4 {
+    color: white;
+    font-size: 13px;
+}
+h3 {
+    font-size: 19px;
+    color: white;
+}
+p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+blockquote {
+    margin-top: 15px;
+    opacity: 0.5;
+    color: white;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+
+/*AREA TOTAL*/
+.area-total {
+    width: inherit;
+    height: inherit;
+    background-color: #edf2f8;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*CONTAINER-GRID*/
+.area-total .container {
+    max-width: 1100px;
+    height: 575px;
+    display: grid;
+    gap: 27px 31px;
+    grid-auto-rows: 282px; /*266px*/
+    grid-auto-columns: 255px; /*fixed*/
+    grid-template-areas: 
+        "Daniel Daniel Jonathan Kira"
+        "Jeanette Patrick Patrick Kira"
+    ;
+}
+.area-grid {
+    border-radius: 10px;
+}
+
+
+/*QUOTE BACKGROUND*/
+.bg-quote {
+    max-width: 541px;
+    height: auto;
+    background-image: url('../image/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-x: calc(100% - 81px)
+}
+
+/*AREA-INFO*/
+.area-total-info {
+    max-width: 475px;
+    height: auto;
+    margin: 24px 37px 33px 33px;
+}
+
+
+/*GERAL PROFILE*/
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+/*PROFILE IMAGE*/
+.profile .profile-img img {
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/*PROFILE SETTING - AREA 1, 2, 4*/
+
+
+/*TEXT - AREA 1, 2, 4*/
+.text-area {
+    margin-top: 23px;
+}
+
+/*AREA1*/
+.area1 {
+    grid-area: Daniel;
+    background-color: var(--Primary-Moderate-violet);
+}
+
+/*AREA 2*/
+.area2 {
+    grid-area: Jonathan;
+    background-color: #49556b;
+}
+
+/*AREA 3*/
+.area3 {
+    grid-area: Kira;
+    background-color: var(--Primary-White);
+}
+
+/*AREA 4*/
+.area4 {
+    grid-area: Jeanette;
+    background-color: var(--Primary-White);
+}
+
+.area3 h3, .area3 h4, .area3 p, .area3 blockquote,
+.area4 h3, .area4 h4, .area4 p, .area4 blockquote {
+    color: black;
+}
+
+/*AREA 5*/
+.area5 {
+    grid-area: Patrick;
+    background-color: #18202d;
+}
+
+.area3 blockquote, .area4 blockquote, .area5 blockquote,
+.area3 .text-area, .area4 .text-area, .area5 .text-area {
+    margin-top: 20px;
+}
+.area3, .area4, .area5 {
+    height: calc(100% - 16px);
+}
+
+@media (max-width: 1150px) {
+    .area-total .container {
+        grid-template-areas: 
+            "Daniel Daniel Jonathan"
+            "Jeanette Patrick Patrick"
+            " Kira  Kira ."
+        ;
+    }
+}
+@media (max-width: 847px) {
+    
+
+    .bg-quote {
+        max-width: 541px;
+        background-image: url('../image/bg-pattern-quotation.svg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-position-x: calc(100% - 18px)
+    }
+
+    .area-total .container {
+        grid-auto-rows: auto;
+        margin-top: -160px;
+        grid-auto-columns: 321px;
+        gap: 25px 0px;
+        grid-template-areas: 
+            "Daniel"
+            "Daniel"
+            "Jonathan"
+            "Jeanette"
+            "Patrick"
+            "Patrick"
+            "Kira"
+            "Kira"
+        ;
+    }      
+    
+    
+}
